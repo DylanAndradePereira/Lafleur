@@ -1,0 +1,129 @@
+/* Police Amatic SC */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
+/* Police Belgrano */
+@import url('https://fonts.googleapis.com/css2?family=Belgrano&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Disposition de la navbar */
+#navbar{
+
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 7vw;
+
+    border-bottom: solid 1px black;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    list-style-type: none;
+    font-family: 'Amatic SC';
+}
+
+#navbar li{
+    font-size: 3vw;
+}
+
+#navbar img{
+    width: 6vw;
+}
+
+main #title{
+    font-family: 'Belgrano', serif;
+    font-size: 4vw;
+}
+
+.green{
+    color: #88B494;
+}
+
+.mainContainer{
+    position: relative;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    text-align: center;
+
+}
+
+
+
+.bo{
+    /* border: solid 1px green; */
+    position: absolute;
+    top: 10%;
+    right: 27%;
+}
+
+.imgHome img{
+    /* border: solid 1px black; */
+    width: 20vw;
+}
+
+.mainContainer > div {
+    /* border: 1px solid blue; */
+    width: 49%;
+    padding: 0;
+    margin: 0;
+}
+
+
+.mainContainer input {
+    padding: 3vh;
+    border: solid 1px;
+    border-radius: 30px;
+    width: 30%;
+    
+}
+
+form input[type="text"]{
+    border: solid 1px black;
+    vertical-align: middle;
+    padding-right: 50px;
+
+}
+
+form input[type="submit"]{
+    border-radius: 30px;
+    border: none;
+    width: 20%;
+    height: 5vw;
+    background-color: #88B494;
+    vertical-align: middle;
+    margin-left: -50px;
+
+}
+
+
+#buttonBonsail{
+    background-color: transparent;
+    border: 1px solid;
+    padding: 1vh;
+    border-radius: 30px;
+    width: 50%;
+    font-family: 'Amatic SC';
+    font-size: 3vw;
+    margin-right: 20vw;
+
+
+}
