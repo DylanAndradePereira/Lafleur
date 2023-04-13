@@ -13,13 +13,13 @@
     <header>
 
         <ul id="navbar">
-            <li><img src="./icons/rmbg_logoLaFleur.png"></li>
-            <li>LAFLEUR</li>
-            <li>ACCUEIL</li>
-            <li>SHOP</li>
-            <li>CONTACT</li>
-            <li>PROFIL</li>
-            <li>PANIER</li>
+            <a href="#"><li><img src="./icons/rmbg_logoLaFleur.png"></li></a>
+            <a href="#"><li>LAFLEUR</li></a>
+            <a href="#"><li>ACCUEIL</li></a>
+            <a href="#"><li>SHOP</li></a>
+            <a href="#"><li>CONTACT</li></a>
+            <a href="#"><li>PROFIL</li></a>
+            <a href="#"><li>PANIER</li></a>
         </ul>
 
     </header>
@@ -44,13 +44,15 @@
             
             <div>
                 <form>
-                    <input placeholder="Déja une idée ?" type="text">
-                    <span><input value="---->" type="submit"></span>
+                    <input type="text" name="recherche" placeholder="Déja une idée ?">
+                    <button class="buttonSubmitArrow" type="submit">
+                        <img class="arrowButton" src="icons/arrow.png" alt="flèche">
+                    </button>
                 </form>
             </div>
 
             <div>
-                <button id="buttonBonsail">BONSAIL</button>
+                <a href="#"><button id="buttonBonsail">BONSAIL</button></a>
             </div>
             
 

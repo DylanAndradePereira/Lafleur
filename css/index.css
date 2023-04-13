@@ -26,13 +26,18 @@
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
-
+    
     list-style-type: none;
     font-family: 'Amatic SC';
 }
 
+#navbar a{
+
+    text-decoration: none;
+}
 #navbar li{
     font-size: 3vw;
+    color: #404040;
 }
 
 #navbar img{
@@ -42,6 +47,7 @@
 main #title{
     font-family: 'Belgrano', serif;
     font-size: 4vw;
+    color: #404040;
 }
 
 .green{
@@ -49,6 +55,7 @@ main #title{
 }
 
 .mainContainer{
+    margin-top: 7vh;
     position: relative;
     /* border: 1px solid red; */
     display: flex;
@@ -89,28 +96,35 @@ main #title{
 
 
 .mainContainer input {
-    padding: 3vh;
     border: solid 1px;
     border-radius: 30px;
     width: 30%;
+    padding-left: 1vw;
     
 }
 
 form input[type="text"]{
+    font-size: ;
     border: solid 1px black;
     vertical-align: middle;
     padding-right: 50px;
-
+    height: 4vw;
 }
 
-form input[type="submit"]{
-    border-radius: 30px;
+.buttonSubmitArrow{
+    background-color: transparent;
     border: none;
-    width: 20%;
-    height: 5vw;
+}
+
+.arrowButton{
+    
+    border-radius: 25px;
+    border: none;
+    width: 4vw;
+    height: 4vw;
     background-color: #88B494;
     vertical-align: middle;
-    margin-left: -50px;
+    margin-left: -4vw;
 
 }
 
