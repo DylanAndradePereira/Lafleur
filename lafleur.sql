@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 13 avr. 2023 à 14:14
+-- Généré le : lun. 17 avr. 2023 à 12:47
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -98,10 +98,16 @@ CREATE TABLE IF NOT EXISTS `t_commande` (
 DROP TABLE IF EXISTS `t_pannier`;
 CREATE TABLE IF NOT EXISTS `t_pannier` (
   `idPannier` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(100) NOT NULL,
-  PRIMARY KEY (`idPannier`),
-  UNIQUE KEY `T_PANNIER_T_USER0_AK` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`idPannier`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `t_pannier`
+--
+
+INSERT INTO `t_pannier` (`idPannier`) VALUES
+(1),
+(2);
 
 -- --------------------------------------------------------
 
@@ -161,12 +167,21 @@ CREATE TABLE IF NOT EXISTS `t_user` (
   `nom` varchar(100) NOT NULL,
   `prenom` varchar(100) NOT NULL,
   `adresse` varchar(100) NOT NULL,
+  `ville` varchar(100) DEFAULT NULL,
   `codePostale` varchar(100) NOT NULL,
   `motDePasse` varchar(100) NOT NULL,
   `idPannier` int(11) NOT NULL,
   PRIMARY KEY (`email`),
   UNIQUE KEY `T_USER_T_PANNIER0_AK` (`idPannier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `t_user`
+--
+
+INSERT INTO `t_user` (`email`, `nom`, `prenom`, `adresse`, `ville`, `codePostale`, `motDePasse`, `idPannier`) VALUES
+('aldupont@lafleur.fr', 'dupont', 'alex', '31 rue des petits chats ', 'orléans', '45000', '@lDupont45', 1),
+('dylheur@gmail.com', 'lheur', 'dylan', '8 rue des fleurs', 'paris', '75000', 'Dylh€ur75', 2);
 
 --
 -- Contraintes pour les tables déchargées
@@ -191,12 +206,6 @@ ALTER TABLE `contenir`
 --
 ALTER TABLE `t_commande`
   ADD CONSTRAINT `T_COMMANDE_T_USER0_FK` FOREIGN KEY (`email`) REFERENCES `t_user` (`email`);
-
---
--- Contraintes pour la table `t_pannier`
---
-ALTER TABLE `t_pannier`
-  ADD CONSTRAINT `T_PANNIER_T_USER0_FK` FOREIGN KEY (`email`) REFERENCES `t_user` (`email`);
 
 --
 -- Contraintes pour la table `t_produit`
