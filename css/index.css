@@ -33,12 +33,14 @@ footer{
 }
 
 /* Disposition de la navbar */
+
+
 #navbar{
 
     display: flex;
     list-style-type: none;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-content: center;
     justify-content: center;
     align-items: center;
@@ -63,6 +65,28 @@ footer{
 
 #navbar img{
     width: 6vw;
+}
+
+@media screen and (max-width: 600px) {
+    #navbar{
+        display: flex;
+        list-style-type: none;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+        gap: 7vw;
+        border-bottom: solid 1px black;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-family: 'Amatic SC';
+    }
+
+    #navbar a li{
+        font-size: 8vw;
+    }
+
 }
 
 main #title{
@@ -115,7 +139,7 @@ main #title{
     }
 
     .mainContainer{
-        margin-top: 50%;
+        margin-top: 30%;
         position: relative;
         /* border: 1px solid red; */
         display: flex;
@@ -360,10 +384,9 @@ footer img{
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 2.5vh;
 }
 
 #navCategories ul li{
@@ -375,7 +398,21 @@ footer img{
     border-radius: 30px;
     padding-top: 2.5vh;
     padding-bottom: 2.5vh;
+   
 }
+
+@media screen and (max-width: 600px) {
+    #navCategories ul li{
+    font-family: 'Amatic SC';
+    font-size: 8vw;
+    background-color: #88B494;
+    width: 30vw;
+    text-align: center;
+    border-radius: 30px;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+}
+  }
 
 
 
@@ -447,7 +484,7 @@ footer img{
     border-radius: 30px;
 
     width: 25%;
-    height: 55vh;
+    height: fit-content;
 
     display: flex;
     flex-direction: column;
@@ -468,7 +505,7 @@ footer img{
         border-radius: 30px;
     
         width: 44%;
-        height: 40vh;
+        height: fit-content;
     
         display: flex;
         flex-direction: column;
@@ -490,7 +527,7 @@ footer img{
         border-radius: 30px;
     
         width: 100%;
-        height: 55vh;
+        height: fit-content;
     
         display: flex;
         flex-direction: column;
@@ -507,9 +544,9 @@ footer img{
 
 
 
- .card>img{
+ .card img{
     width: 100%;
-    height: 60%;
+    height: 350px;
     border-radius: 30px;
 }
 
@@ -526,6 +563,8 @@ footer img{
     width: 90%;
     height: 10%;
     overflow: hidden;
+    font-size: larger;
+    margin-bottom: 5%;
 }
 
 .card>form{
@@ -542,8 +581,24 @@ footer img{
     background-color: #88B494;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: 'Amatic SC';
-    font-size: 2vw;
+    font-size: 2.5vw;
 } 
+
+
+@media screen and (max-width: 600px) {
+    .card>form>button{
+        font-size: 8vw;
+    } 
+    .card img{
+        width: 100%;
+        height: 250px;
+        border-radius: 30px;
+    }
+    .card>h2{
+
+        font-size: 9vw;
+    }
+}
 /* 
 
 position: absolute;
