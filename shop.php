@@ -80,7 +80,6 @@
                                             echo '"'.$recherche.'">';
                                             break;
                                     }
-                                    
                                 }
                                 //Le bouton pour commander
                                 echo '<button type="submit" name="idProduit" value='.$ligne['idProduit'].'>COMMANDER</button>
@@ -94,7 +93,6 @@
             ?>         
         </div>
     </main>
-<!--  -->
 
 <?php include 'footer.php'?>
 </body>
