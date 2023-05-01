@@ -13,6 +13,13 @@
 
 <?php
 session_start();
+
+//Vérif admin
+if (isset($_SESSION['admin']) && ($_SESSION['admin'])){
+    $admin = true;
+} else {
+    $admin = false;
+}
 ?>
 
 <header>

@@ -82,9 +82,15 @@
                                     }
                                 }
                                 //Le bouton pour commander
-                                echo '<button type="submit" name="idProduit" value='.$ligne['idProduit'].'>COMMANDER</button>
-                            </form>
-                        </div>';
+                                echo '<button type="submit" name="idProduit" value='.$ligne['idProduit'].' style="cursor:pointer">COMMANDER</button>
+                            </form>';
+                            
+                            if ($admin){
+                                echo '<form action="backend/editArticle.php" style="margin-top:10px">
+                                    <button type="submit" name="idProduit" value='.$ligne['idProduit'].' style="cursor:pointer">MODIFIER</button>
+                                </form>';
+                            }
+                        echo '</div>';
 
                 } 
                 if(($table -> rowCount()) == 0){ 
