@@ -12,10 +12,10 @@ $sql->bindParam(':prenom', $_REQUEST['prenom']);
 $sql->bindParam(':adresse', $_REQUEST['adresse']);
 $sql->bindParam(':ville', $_REQUEST['ville']);
 $sql->bindParam(':codePostal', $_REQUEST['codePostal']);
-$sql->bindParam(':motDePasse', SHA1($motDePasse));
+$sql->bindParam(':motDePasse', SHA1($_REQUEST['motDePasse']));
 $sql->bindParam(':panier', $panier);
 
 $sql->execute();
 
-header("location: ../login.php");   
+header("location: ../profil.php");   
 ?>
