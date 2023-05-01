@@ -10,6 +10,3 @@ $stmt->execute();
 header("location: BackOffice.php");   
 
 ?>
-
-
-

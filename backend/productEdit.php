@@ -3,7 +3,7 @@
 include '../connection.php';
 
 
-//Faudra ici importer l'image
+//Importation de l'image
 if (isset($_FILES["photoProduit"])){
     require('add_photo.php');
     if (isset($errorUpload)){
