@@ -1,3 +1,5 @@
+<?php $testPage="Profil" ?>
+
 <?php include 'header.php'?>
 <br/>
     <main>

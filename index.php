@@ -1,4 +1,6 @@
-<?php include 'header.php'?>
+<?php 
+$namePage='Lafleur - Accueil';
+include 'header.php'?>
 
     <main>
         <div class="mainContainer">
@@ -10,7 +12,6 @@
                 </h1> 
             </div>
          
-
             <div>
                 <div class="imgHome hidden-phone">
                     <img src="./images/RectangleVertt.png">
@@ -19,7 +20,7 @@
             </div>
             
             <div class="hidden-phone">
-                <form>
+                <form action="shop.php">
                     <input type="text" name="recherche" placeholder="Déja une idée ?">
                     <button class="buttonSubmitArrow" type="submit">
                         <img class="arrowButton" src="icons/arrow.png" alt="flèche">

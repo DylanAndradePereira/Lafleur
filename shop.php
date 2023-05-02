@@ -1,4 +1,6 @@
-<?php include 'header.php'?>
+<?php 
+$namePage='Lafleur - Catalogue';
+include 'header.php'?>
     <main>
         <div id="navCategories">
             <ul>
@@ -28,7 +30,7 @@
         </div>
 
         <form class="rechercheShop">
-            <input type="text" name="recherche" id="recherche" 
+            <input type="text" name="recherche" id="recherche" placeholder="Rechercher"
                 <?php
                     if(isset($_GET["recherche"]) and !empty($_GET["recherche"])){
                         //Si l'utilisateur a cherché quelque chose, on le remets dans la barre de recherche
@@ -36,7 +38,7 @@
                         echo 'value="'.$recherche.'"';
                     }
                 ?>
-                style="width:100%;height:auto;padding-left:20px">
+                style="width:100%;height:auto;padding-left:20px;font-size:2vh">
             <button type="submit"></button>
         </form>
         <!-- Boucle des articles -->

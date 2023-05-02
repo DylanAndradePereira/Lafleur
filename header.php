@@ -1,3 +1,7 @@
+<?php if (!isset($namePage)){
+    $namePage = 'Lafleur';
+} ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -7,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./css/index.css">
-    <title>Lafleur</title>
+    <title><?php echo $namePage?></title>
 </head>
 <body> 
 
@@ -24,18 +28,39 @@ if (isset($_SESSION['admin']) && ($_SESSION['admin'])){
 
 <header>
     <ul id="navbar">
-        <a href="#"><li><img src="./icons/rmbg_logoLaFleur.png"></li></a>
-        <a href="./index.php"><li>ACCUEIL</li></a>
-        <a href="./shop.php"><li>SHOP</li></a>
-        <a href="./profil.php"><li>
-            <?php if(isset($_SESSION['email'])){
-                echo "PROFIL</li></a>
-                <a href='./deconnect.php'><li>DECONNEXION</li></a>
-                ";
-            } else {
-                echo "CONNEXION</li></a>";
-            }
-            ?>
-        <a href="./panier.php"><li>PANIER</li></a>
+        <a href="#">
+            <li>
+                <img src="./icons/rmbg_logoLaFleur.png">
+            </li>
+        </a>
+        
+        <a href="./index.php">
+            <li <?php $aP='Lafleur - Accueil'; include 'verifGreen.php' ?>>
+                ACCUEIL
+            </li>
+        </a>
+        
+        <a href="./shop.php">
+            <li <?php $aP='Lafleur - Catalogue'; include 'verifGreen.php' ?>>
+                SHOP
+            </li>
+        </a>
+
+        <a href="./profil.php">
+            <li <?php $aP='Profil'; include 'verifGreen.php' ?>>
+                <?php if(isset($_SESSION['email'])){
+                    echo "PROFIL</li></a>
+                    <a href='./deconnect.php'><li>DECONNEXION</li></a>
+                    ";
+                } else {
+                    echo "CONNEXION</li></a>";
+                }
+                ?>
+                
+        <a href="./panier.php">
+            <li <?php $aP='Lafleur - Panier'; include 'verifGreen.php' ?>>
+                PANIER
+            </li>
+        </a>
     </ul>
 </header>
