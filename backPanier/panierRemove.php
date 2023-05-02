@@ -4,7 +4,7 @@ include '../connection.php';
 
 $idProduit = htmlspecialchars($_REQUEST["idProduit"]);
 $idPanier = htmlspecialchars($_SESSION['idPanier']);
-$act = htmlspecialchars($_SESSION['act']);
+$act = htmlspecialchars($_REQUEST['act']);
 
 switch ($act) {
     case 'all':
