@@ -68,7 +68,7 @@
                             <img src="./images/'.$ligne['Image'].'" alt="'.$ligne['Designation'].'">
                             <h2>'.$ligne['Designation'].'</h2>
                             <p>'.$ligne['Description'].'</p>
-                            <form action="backend/panierAdd.php">';
+                            <form action="backPanier/panierAdd.php">';
 
                                 if (isset($comeBack)){
                                     echo '<input type="hidden" name="'.$comeBack.'" value=';

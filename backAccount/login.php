@@ -28,7 +28,7 @@ if (!$user){
     $_SESSION['adresse'] = $user['adresse'];
     $_SESSION['ville'] = $user['ville'];
     $_SESSION['codePostale'] = $user['codePostale'];
-    $_SESSION['idPannier'] = $user['idPannier'];
+    $_SESSION['idPanier'] = $user['idPannier'];
     $_SESSION['admin'] = $user['admin'];
     header("Location: ../index.php");
 }
