@@ -25,17 +25,17 @@ if (isset($_SESSION['admin']) && ($_SESSION['admin'])){
 <header>
     <ul id="navbar">
         <a href="#"><li><img src="./icons/rmbg_logoLaFleur.png"></li></a>
-        <a href="./index.php"><li>LAFLEUR</li></a>
-        <a href="./accueil.php"><li>ACCUEIL</li></a>
+        <a href="./index.php"><li>ACCUEIL</li></a>
         <a href="./shop.php"><li>SHOP</li></a>
-        <a href="./contact.php"><li>CONTACT</li></a>
         <a href="./profil.php"><li>
             <?php if(isset($_SESSION['email'])){
-                echo "PROFIL";
+                echo "PROFIL</li></a>
+                <a href='./deconnect.php'><li>DECONNEXION</li></a>
+                ";
             } else {
-                echo "CONNEXION";
+                echo "CONNEXION</li></a>";
             }
-            ?></li></a>
+            ?>
         <a href="./panier.php"><li>PANIER</li></a>
     </ul>
 </header>

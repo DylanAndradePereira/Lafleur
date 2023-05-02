@@ -9,8 +9,8 @@ $mdpconnect = SHA1($_REQUEST['mdp']);
 //vérifier si le mail existe dans la base de donnée avant de vérifier le mot de passe
 
 $sql=$dbh->prepare('SELECT * FROM `t_user` WHERE `email`= :mail_login AND `motDePasse`= :motDePasse');
-$sql->bindParam(':mail_login', $_REQUEST['email']);
-$sql->bindParam(':motDePasse', SHA1($motDePasse));
+$sql->bindParam(':mail_login', $codeconnect);
+$sql->bindParam(':motDePasse',$mdpconnect);
 
 $sql->execute();
 

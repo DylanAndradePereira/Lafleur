@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['idPanier'])){
+    header("location: ../profil.php");   
+    die();
+}
+
 include '../connection.php';
 
 $idProduit = htmlspecialchars($_REQUEST["idProduit"]);
