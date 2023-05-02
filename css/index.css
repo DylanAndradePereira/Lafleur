@@ -89,6 +89,17 @@ footer{
 
 }
 
+@media screen and (min-width: 600px) {
+    #navbar{
+        z-index: 1;
+        background-color: white;
+        position: fixed;
+    }
+    main {
+        margin-top: 5%;
+    }
+}
+
 main #title{
     font-family: 'Belgrano', serif;
     font-size: 4vw;
@@ -244,7 +255,11 @@ form input[type="text"]{
     position: fixed;
     bottom: 0;
    
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    background-color: white;
+    border-top: solid black 1px;
+
     list-style-type: none;
     display: flex;
     justify-content: space-between;

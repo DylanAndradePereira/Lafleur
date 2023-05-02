@@ -2,14 +2,14 @@
 require "../connection.php" ;
 
 if ((!isset($_REQUEST['pass'])) || (!isset($_REQUEST['confirm_pass'])) || (!isset($_REQUEST['email'])) || (!isset($_REQUEST['nom'])) || (!isset($_REQUEST['prenom']))){
-    header("location: ../profil.php?act=sign&error=1");   //erreur : toutes les infos n'ont pas été entrées
+    header("location: ../profil.php?act=sign&error=1");   //erreur 1 : toutes les infos n'ont pas été entrées
     die();
 }
 
 if (($_REQUEST['pass']) == ($_REQUEST['confirm_pass'])){
     $passHash = SHA1($_REQUEST['pass']);
 } else {
-    header("location: ../profil.php?act=sign&error=2");   //erreur : Les mots de passe ne correspondent pas
+    header("location: ../profil.php?act=sign&error=2");   //erreur 2 : Les mots de passe ne correspondent pas
     die();        
 }
 

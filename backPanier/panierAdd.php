@@ -6,10 +6,37 @@ if (!isset($_SESSION['idPanier'])){
     die();
 }
 
+if (!isset($_SESSION['idProduit'])){
+    header("location: ../shop.php");   
+    die();
+}
 include '../connection.php';
 
+//Préparation des variables de produit ou de panier
 $idProduit = htmlspecialchars($_REQUEST["idProduit"]);
 $idPanier = htmlspecialchars($_SESSION['idPanier']);
+
+//Récupération de la variable comeback
+$comeBack = "";
+if (isset($_REQUEST['categ'])){
+    $comeBack = "?categ=".htmlspecialchars($_REQUEST["categ"]);
+} else {
+    if (isset($_REQUEST['recherche'])){
+        $comeBack = "?recherche=".htmlspecialchars($_REQUEST["recherche"]);
+    }
+}
+
+//Vérification de si le produit est encore disponible
+$verifStock = $dbh->prepare("SELECT `Stock` FROM `t_produit` 
+                        WHERE `idProduit`=:idProduit;");
+$verifStock->bindParam(':idProduit', $idProduit);
+$verifStock->execute();
+$nbStock = $verifStock->fetch();
+
+if ($nbStock['Stock'] == 0){
+    header("location: ../shop.php".$comeBack."#article_".$idProduit."&error=noStock");
+    die();
+}
 
 //Vérification de si le produit est déjà dans le panier
 $verif = $dbh->prepare("SELECT * FROM `contenir` 
@@ -35,16 +62,6 @@ if ($nbVerif){
 $stmt->bindParam(':idProduit', $idProduit);
 $stmt->bindParam(':idPanier', $idPanier);
 $stmt->execute();
-
-//Récupération de la variable comeback
-$comeBack = "";
-if (isset($_REQUEST['categ'])){
-    $comeBack = "?categ=".htmlspecialchars($_REQUEST["categ"]);
-} else {
-    if (isset($_REQUEST['recherche'])){
-        $comeBack = "?recherche=".htmlspecialchars($_REQUEST["recherche"]);
-    }
-}
 
 //Revenir à la page
 header("location: ../shop.php".$comeBack."#article_".$idProduit);   

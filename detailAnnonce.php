@@ -1,4 +1,6 @@
-<?php include 'header.php'?>
+<?php 
+$namePage='Lafleur - Catalogue';
+include 'header.php'?>
     <main>
 
     <?php
@@ -25,6 +27,11 @@
 
                     <p class="desc"><?php echo $datasProduit['Description'] ?></p>
 
+                    <?php if ($datasProduit['Stock'] == 0){
+                        echo '<div class="row">
+                            Rupture de stock
+                        </div>';
+                    } else { ?>
                     <a href="backPanier/panierAdd.php?idProduit=<?php echo $datasProduit['idProduit'] ?>" >
                          <div class="row">
                             <div class="whiteBox">
@@ -36,10 +43,13 @@
                             </span>
                         </div>
                     </a>
+
+                    <?php } ?>
+
                 </div>
         
                 <div class="rightDetail">
-                    <img src="./images/<?php echo $datasProduit['Image'] ?>" alt=""><!-- src a modifier -->
+                    <img src="./images/<?php echo $datasProduit['Image'] ?>" alt="">
                 </div>
               </div>
         </div>

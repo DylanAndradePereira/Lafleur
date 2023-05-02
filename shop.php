@@ -69,8 +69,12 @@ include 'header.php'?>
                     echo '<div class="card" id="article_'.$ligne['idProduit'].'" onClick="document.location.href=\'detailAnnonce.php?produit='.$ligne['idProduit'].'\'">
                             <img src="./images/'.$ligne['Image'].'" alt="'.$ligne['Designation'].'">
                             <h2>'.$ligne['Designation'].'</h2>
-                            <p>'.$ligne['Description'].'</p>
-                            <form action="backPanier/panierAdd.php">';
+                            <p>'.$ligne['Description'].'</p>';
+                            if ($ligne['Stock'] == 0){
+                                //Information de la rupture de stock
+                                echo '<form><button style="background-color:#949F97">RUPTURE DE STOCK</button></form>';
+                            } else {
+                            echo '<form action="backPanier/panierAdd.php">';
 
                                 if (isset($comeBack)){
                                     echo '<input type="hidden" name="'.$comeBack.'" value=';
@@ -83,9 +87,11 @@ include 'header.php'?>
                                             break;
                                     }
                                 }
-                                //Le bouton pour commander
-                                echo '<button type="submit" name="idProduit" value='.$ligne['idProduit'].' style="cursor:pointer">COMMANDER</button>
+
+                            //Le bouton pour commander
+                            echo '<button type="submit" name="idProduit" value='.$ligne['idProduit'].' style="cursor:pointer">COMMANDER</button>
                             </form>';
+                        }
                             
                             if ($admin){
                                 echo '<form action="backend/editArticle.php" style="margin-top:10px">
