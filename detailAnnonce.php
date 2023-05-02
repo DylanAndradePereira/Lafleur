@@ -1,11 +1,11 @@
 <?php include 'header.php'?>
     <main>
-        
+
         <div id="containerDetail">
-            <div class="row">
+            <div class="rowPhone row">
                 <div class="column leftDetail">
 
-                    <div class="rowPhone">
+                    <div class="row">
                         <div class="whiteBox">
                             Titre
                             
@@ -24,7 +24,7 @@
                         naturelle. (Bonsaï) Art et pratique visant
                          à faire pousser un bonsaï.</p>
 
-                         <div class="rowPhone">
+                         <div class="row">
                             <div class="whiteBox">
                                 Ajouter
                                 
