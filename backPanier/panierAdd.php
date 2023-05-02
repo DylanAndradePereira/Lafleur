@@ -6,7 +6,7 @@ if (!isset($_SESSION['idPanier'])){
     die();
 }
 
-if (!isset($_SESSION['idProduit'])){
+if (!isset($_REQUEST['idProduit'])){
     header("location: ../shop.php");   
     die();
 }
