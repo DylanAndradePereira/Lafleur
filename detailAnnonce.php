@@ -1,29 +1,31 @@
 <?php include 'header.php'?>
     <main>
 
+    <?php
+        include 'connection.php';
+        
+        $table = $dbh->prepare('SELECT * FROM t_produit WHERE idProduit=:idProduit');
+        $table->bindParam(':idProduit', $_REQUEST["produit"]);
+        $table->execute();
+
+        $datasProduit = $table->fetch();
+    ?>
         <div id="containerDetail">
             <div class="rowPhone row">
                 <div class="column leftDetail">
 
                     <div class="row">
                         <div class="whiteBox">
-                            Titre
-                            
+                            <?php echo $datasProduit['Designation'] ?>
                         </div>
                         <span class="greenBox">
-                            Prix
+                            <?php echo $datasProduit['prix']."€" ?>
                         </span>
                     </div>
 
-                    <p class="desc">Arbre cultivé en pot auquel des 
-                        soins particuliers sont apportés en vue de 
-                        lui conserver des 
-                        proportions considérablement réduites 
-                        par rapport à celles qui 
-                        résulteraient d'une croissance 
-                        naturelle. (Bonsaï) Art et pratique visant
-                         à faire pousser un bonsaï.</p>
+                    <p class="desc"><?php echo $datasProduit['Description'] ?></p>
 
+                    <a href="backPanier/panierAdd.php?idProduit=<?php echo $datasProduit['idProduit'] ?>" >
                          <div class="row">
                             <div class="whiteBox">
                                 Ajouter
@@ -33,11 +35,11 @@
                                 ->
                             </span>
                         </div>
-
+                    </a>
                 </div>
         
                 <div class="rightDetail">
-                    <img src="./images/campanule.png" alt=""><!-- src a modifier -->
+                    <img src="./images/<?php echo $datasProduit['Image'] ?>" alt=""><!-- src a modifier -->
                 </div>
               </div>
         </div>

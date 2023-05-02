@@ -66,7 +66,7 @@ include 'header.php'?>
                 $tableProduits = $table->fetchAll();
                 foreach ($tableProduits as $ligne) {
                     //Affichage de chaque article demandé
-                    echo '<div class="card" id="article_'.$ligne['idProduit'].'">
+                    echo '<div class="card" id="article_'.$ligne['idProduit'].'" onClick="document.location.href=\'detailAnnonce.php?produit='.$ligne['idProduit'].'\'">
                             <img src="./images/'.$ligne['Image'].'" alt="'.$ligne['Designation'].'">
                             <h2>'.$ligne['Designation'].'</h2>
                             <p>'.$ligne['Description'].'</p>
