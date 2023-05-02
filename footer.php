@@ -6,7 +6,7 @@
         </div>
         <div>
             <a href="https://twitter.com/lafleur4500"><li>TWITTER</li></a>
-            <a href="#"><li>INSTAGRAM</li></a>
+            <a href="https://www.instagram.com"><li>INSTAGRAM</li></a>
         </div>
     </ul>
 </footer>
