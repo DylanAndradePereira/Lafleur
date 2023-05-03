@@ -48,19 +48,21 @@ if (isset($_SESSION['admin']) && ($_SESSION['admin'])){
 
         <a href="./profil.php">
             <li <?php $aP='Profil'; include 'verifGreen.php' ?>>
-                <?php if(isset($_SESSION['email'])){
+                <?php if(!isset($_SESSION['email'])){
+                    echo "CONNEXION</li></a>";
+                } else {
                     echo "PROFIL</li></a>
                     <a href='./deconnect.php'><li>DECONNEXION</li></a>
                     ";
-                } else {
-                    echo "CONNEXION</li></a>";
-                }
                 ?>
                 
-        <a href="./panier.php">
-            <li <?php $aP='Lafleur - Panier'; include 'verifGreen.php' ?>>
-                PANIER
-            </li>
-        </a>
+                <a href="./panier.php">
+                    <li <?php $aP='Lafleur - Panier'; include 'verifGreen.php' ?>>
+                        PANIER
+                    </li>
+                </a>
+        <?php
+            }
+        ?>
     </ul>
 </header>
