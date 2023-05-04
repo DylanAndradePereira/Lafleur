@@ -24,13 +24,13 @@ include 'header.php'
 
             <div class="greenPart">
                 
-                <div class="columnPanier"><h2>'.$datasProduct['Designation'].'</h2>
+                <div class="columnPanier"><h2>'.utf8_encode($datasProduct['Designation']).'</h2>
                     <h3>'.$datasProduct['prix']*$anElement['quantite'].'</h3>
                 </div>
             </div>
 
             <div class="descPart">
-                <p>'.$datasProduct['Description'].'</p>
+                <p>'.utf8_encode($datasProduct['Description']).'</p>
                 
             </div>
 
