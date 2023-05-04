@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 02 mai 2023 à 16:19
+-- Généré le : jeu. 04 mai 2023 à 07:10
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `t_produit` (
 
 INSERT INTO `t_produit` (`idProduit`, `Designation`, `prix`, `Stock`, `Description`, `Image`, `idCategorie`) VALUES
 (1, 'La rose grimpant Pierre de Ronsard', 9.99, 155, 'C\'est un rosier grimpant à grandes fleurs très doubles ayant la forme des roses anciennes, globuleuses, d\'une couleur formant un dégradé du rose carminé central au rose délicat de l\'extérieur.', 'roseGrimpantPierreDeRonsard.png', 1),
-(2, 'hortensia', 19.99, 586, 'L’Hortensia est un arbuste à fleurs incontournable qui nous ravit au jardin de sa longue floraison, de juin à septembre ou octobre.', 'hortensia.png', 2),
+(2, 'hortensia', 19.99, 586, 'L\'Hortensia est un arbuste à fleurs incontournable qui nous ravit au jardin de sa longue floraison, de juin à septembre ou octobre.', 'hortensia.png', 2),
 (3, 'le Coeur de Marie', 29.99, 5786, 'Le Coeur de Marie est une plante vivace, qui a des fleurs roses et blanches en forme de cœur. Elle peut atteindre 120 cm de haut et 45 cm de large.', 'coeurDeMarie.png', 3),
 (4, 'Tulipe triomphe \'Jan Reus\'', 14.99, 369, 'La Tulipe Triomphe \'Jan Reus\' est recherchée pour son élégance et sa vivacité. Cette tulipe majestueuse à corolle étroite offre des pétales rouge bordeaux velouté s’associant à merveille avec des coloris lilas et orangé.', 'tulipeJanReus.png', 3),
 (5, 'Tulipe Triomphe \'Barcelona\'', 16.99, 153, 'La Tulipe Triomphe Barcelona est intéressante pour son coloris très tendance.', 'tulipeBarcelona.png', 3),
@@ -182,8 +182,8 @@ CREATE TABLE IF NOT EXISTS `t_user` (
 --
 
 INSERT INTO `t_user` (`email`, `nom`, `prenom`, `adresse`, `ville`, `codePostale`, `motDePasse`, `idPannier`, `admin`, `solde`) VALUES
-('aldupont@lafleur.fr', 'dupont', 'alex', '31 rue des petits chats ', 'orléans', '45000', '@lDupont45', 1, NULL, 0),
-('dylheur@gmail.com', 'lheur', 'dylan', '8 rue des fleurs', 'paris', '75000', 'Dylh€ur75', 2, NULL, 0);
+('aldupont@lafleur.fr', 'dupont', 'alex', '31 rue des petits chats ', 'orléans', '45000', 'f137a20ccb25e169019fc623d79c7f67e9c076ad', 1, 1, 0),
+('dylheur@gmail.com', 'lheur', 'dylan', '8 rue des fleurs', 'paris', '75000', 'be9a318c4a9fee13aa5da57dcfc1f68a111442fb', 2, NULL, 0);
 
 --
 -- Contraintes pour les tables déchargées
