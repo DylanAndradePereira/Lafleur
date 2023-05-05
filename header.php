@@ -27,7 +27,11 @@ if (isset($_SESSION['admin']) && ($_SESSION['admin'])){
 ?>
 
 <header>
+
+    <!-- BARRE DE NAVIGATION -->
     <ul id="navbar">
+    
+        <!-- Accueil -->
         <a href="#">
             <li>
                 <img src="./icons/rmbg_logoLaFleur.png">
@@ -40,22 +44,24 @@ if (isset($_SESSION['admin']) && ($_SESSION['admin'])){
             </li>
         </a>
         
+        <!-- Boutique -->
         <a href="./shop.php">
             <li <?php $aP='Lafleur - Catalogue'; include 'verifGreen.php' ?>>
                 SHOP
             </li>
         </a>
 
+        <!-- Profil/Connexion -->
         <a href="./profil.php">
             <li <?php $aP='Profil'; include 'verifGreen.php' ?>>
                 <?php if(!isset($_SESSION['email'])){
                     echo "CONNEXION</li></a>";
                 } else {
                     echo "PROFIL</li></a>
-                    <a href='./deconnect.php'><li>DECONNEXION</li></a>
+                    <a href='./deconnect.php'><li>DÉCONNEXION</li></a>
                     ";
                 ?>
-                
+                <!-- Panier (si connecté) -->
                 <a href="./panier.php">
                     <li <?php $aP='Lafleur - Panier'; include 'verifGreen.php' ?>>
                         PANIER
