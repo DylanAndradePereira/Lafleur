@@ -68,8 +68,8 @@ include 'header.php'?>
                     //Affichage de chaque article demandé
                     echo '<div class="card" id="article_'.$ligne['idProduit'].'" onClick="document.location.href=\'detailAnnonce.php?produit='.$ligne['idProduit'].'\'">
                             <img src="./images/'.$ligne['Image'].'" alt="'.$ligne['Designation'].'">
-                            <h2>'.$ligne['Designation'].'</h2>
-                            <p>'.$ligne['Description'].'</p>';
+                            <h2>'.utf8_encode($ligne['Designation']).'</h2>
+                            <p>'.utf8_encode($ligne['Description']).'</p>';
                             if ($ligne['Stock'] == 0){
                                 //Information de la rupture de stock
                                 echo '<form><button style="background-color:#949F97">RUPTURE DE STOCK</button></form>';

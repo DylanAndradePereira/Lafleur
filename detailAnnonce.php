@@ -18,14 +18,14 @@ include 'header.php'?>
 
                     <div class="row">
                         <div class="whiteBox">
-                            <?php echo $datasProduit['Designation'] ?>
+                            <?php echo utf8_encode($datasProduit['Designation']) ?>
                         </div>
                         <span class="greenBox">
                             <?php echo $datasProduit['prix']."€" ?>
                         </span>
                     </div>
 
-                    <p class="desc"><?php echo $datasProduit['Description'] ?></p>
+                    <p class="desc"><?php echo utf8_encode($datasProduit['Description']) ?></p>
 
                     <?php if ($datasProduit['Stock'] == 0){
                         echo '<div class="row">
