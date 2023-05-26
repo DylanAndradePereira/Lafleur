@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 17 avr. 2023 à 14:08
+-- Généré le : jeu. 04 mai 2023 à 07:10
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -99,7 +99,7 @@ DROP TABLE IF EXISTS `t_pannier`;
 CREATE TABLE IF NOT EXISTS `t_pannier` (
   `idPannier` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`idPannier`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `t_pannier`
@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `t_produit` (
 
 INSERT INTO `t_produit` (`idProduit`, `Designation`, `prix`, `Stock`, `Description`, `Image`, `idCategorie`) VALUES
 (1, 'La rose grimpant Pierre de Ronsard', 9.99, 155, 'C\'est un rosier grimpant à grandes fleurs très doubles ayant la forme des roses anciennes, globuleuses, d\'une couleur formant un dégradé du rose carminé central au rose délicat de l\'extérieur.', 'roseGrimpantPierreDeRonsard.png', 1),
-(2, 'hortensia', 19.99, 586, 'L’Hortensia est un arbuste à fleurs incontournable qui nous ravit au jardin de sa longue floraison, de juin à septembre ou octobre.', 'hortensia.png', 2),
+(2, 'hortensia', 19.99, 586, 'L\'Hortensia est un arbuste à fleurs incontournable qui nous ravit au jardin de sa longue floraison, de juin à septembre ou octobre.', 'hortensia.png', 2),
 (3, 'le Coeur de Marie', 29.99, 5786, 'Le Coeur de Marie est une plante vivace, qui a des fleurs roses et blanches en forme de cœur. Elle peut atteindre 120 cm de haut et 45 cm de large.', 'coeurDeMarie.png', 3),
 (4, 'Tulipe triomphe \'Jan Reus\'', 14.99, 369, 'La Tulipe Triomphe \'Jan Reus\' est recherchée pour son élégance et sa vivacité. Cette tulipe majestueuse à corolle étroite offre des pétales rouge bordeaux velouté s’associant à merveille avec des coloris lilas et orangé.', 'tulipeJanReus.png', 3),
 (5, 'Tulipe Triomphe \'Barcelona\'', 16.99, 153, 'La Tulipe Triomphe Barcelona est intéressante pour son coloris très tendance.', 'tulipeBarcelona.png', 3),
@@ -142,7 +142,7 @@ INSERT INTO `t_produit` (`idProduit`, `Designation`, `prix`, `Stock`, `Descripti
 (7, 'Tulipe à fleur de lis \'White Triumphator\'', 19.99, 526, 'La Tulipe Fleur de Lis White Triumphator est une superbe variété ancienne, datant de 1942, toujours appréciée pour ses longues fleurs effilées d\'un blanc immaculé, dont l\'élégance est incontestable en bouquets comme dans les massifs.', 'tulipeWhiteTriumphator.png', 3),
 (8, 'la Pivoine', 10.99, 257, 'Les pivoines sont connues par une quarantaine d\'espèces de plantes vivaces, herbacées, ou arbustives.', 'pivioine.png', 3),
 (9, 'l\'Iris d\'Allemagne', 10.99, 321, 'L’Iris d’Allemagne est une plante vivace de la famille des Iridacées, qui a des fleurs colorées et parfumées avec une barbe sur les pétales. Elle peut atteindre 120 cm de haut et a un rhizome horizontal qui se ramifie.', 'irisAllemagne.png', 3),
-(10, 'le Dahlia', 13.99, 259, 'Le Dahlia est une plante vivace de la famille des Astéracées, originaire du Mexique et d’Amérique centrale. Ses fleurs sont composées et peuvent être blanches, jaunes, rouges ou violettes.', 'dahlia.png', 3),
+(10, 'le Dahlia', 13.99, 0, 'Le Dahlia est une plante vivace de la famille des Astéracées, originaire du Mexique et d’Amérique centrale. Ses fleurs sont composées et peuvent être blanches, jaunes, rouges ou violettes.', 'dahlia.png', 3),
 (11, 'la Campanule italienne', 19.99, 53, 'La Campanule italienne est une autre appellation de la Campanula isophylla, une plante vivace originaire des falaises et des murailles calcaires d’Italie.', 'campanule.png', 2),
 (12, 'Fleur de sakura', 40.99, 25, 'La fleur de sakura est la fleur du cerisier ornemental du Japon, qui appartient au genre Prunus. Elle est de couleur rose ou blanche et a cinq pétales.', 'sakura.png', 4),
 (13, 'Le narcisse', 9.99, 436, 'Le narcisse est une plante bulbeuse qui appartient à la famille des amaryllidacées. Il existe de nombreuses espèces et variétés de narcisse, qui se distinguent par la couleur et la forme de leurs fleurs.', 'narcisse.png', 3),
@@ -166,11 +166,13 @@ CREATE TABLE IF NOT EXISTS `t_user` (
   `email` varchar(100) NOT NULL,
   `nom` varchar(100) NOT NULL,
   `prenom` varchar(100) NOT NULL,
-  `adresse` varchar(100) NOT NULL,
+  `adresse` varchar(100) DEFAULT NULL,
   `ville` varchar(100) DEFAULT NULL,
-  `codePostale` varchar(100) NOT NULL,
+  `codePostale` varchar(100) DEFAULT NULL,
   `motDePasse` varchar(100) NOT NULL,
   `idPannier` int(11) NOT NULL,
+  `admin` tinyint(4) DEFAULT NULL,
+  `solde` float DEFAULT '0',
   PRIMARY KEY (`email`),
   UNIQUE KEY `T_USER_T_PANNIER0_AK` (`idPannier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -179,9 +181,9 @@ CREATE TABLE IF NOT EXISTS `t_user` (
 -- Déchargement des données de la table `t_user`
 --
 
-INSERT INTO `t_user` (`email`, `nom`, `prenom`, `adresse`, `ville`, `codePostale`, `motDePasse`, `idPannier`) VALUES
-('aldupont@lafleur.fr', 'dupont', 'alex', '31 rue des petits chats ', 'orléans', '45000', '@lDupont45', 1),
-('dylheur@gmail.com', 'lheur', 'dylan', '8 rue des fleurs', 'paris', '75000', 'Dylh€ur75', 2);
+INSERT INTO `t_user` (`email`, `nom`, `prenom`, `adresse`, `ville`, `codePostale`, `motDePasse`, `idPannier`, `admin`, `solde`) VALUES
+('aldupont@lafleur.fr', 'dupont', 'alex', '31 rue des petits chats ', 'orléans', '45000', 'f137a20ccb25e169019fc623d79c7f67e9c076ad', 1, 1, 0),
+('dylheur@gmail.com', 'lheur', 'dylan', '8 rue des fleurs', 'paris', '75000', 'be9a318c4a9fee13aa5da57dcfc1f68a111442fb', 2, NULL, 0);
 
 --
 -- Contraintes pour les tables déchargées
