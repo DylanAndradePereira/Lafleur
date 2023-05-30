@@ -1,61 +1,53 @@
+<style>
+.whiteBox{
+    font-size:2em;
+    width:30%;
+}
+</style>
+
+<?php
+    $email = $_SESSION['email'];
+    $nom = $_SESSION['nom'];
+    $prenom = $_SESSION['prenom'];
+    $adresse = $_SESSION['adresse'];
+    $ville = $_SESSION['ville'];
+    $cp = $_SESSION['codePostale'];
+?>
+
         <div id="containerProfilProfil">
             <div class="row">
                 <div class="whiteBox">
-                    Ajouter
-                    
+                    <?php echo "Email : ".$email; ?>
                 </div>
-                <span class="greenBox">
-                    ->
-                </span>
             </div>
 
             <div class="row">
                 <div class="whiteBox">
-                    Ajouter
-                    
+                    <?php echo "Nom : ".$nom; ?>
                 </div>
-                <span class="greenBox">
-                    ->
-                </span>
             </div>
 
             <div class="row">
                 <div class="whiteBox">
-                    Ajouter
-                    
+                    <?php echo "Prenom : ".$prenom; ?>
                 </div>
-                <span class="greenBox">
-                    ->
-                </span>
             </div>
 
             <div class="row">
                 <div class="whiteBox">
-                    Ajouter
-                    
+                    <?php echo "Adresse : ".$adresse; ?>                
                 </div>
-                <span class="greenBox">
-                    ->
-                </span>
             </div>
 
             <div class="row">
                 <div class="whiteBox">
-                    Ajouter
-                    
+                    <?php echo "Ville : ".$ville; ?>                
                 </div>
-                <span class="greenBox">
-                    ->
-                </span>
             </div>
 
             <div class="row">
                 <div class="whiteBox">
-                    Ajouter
-                    
+                    <?php echo "Code Postal : ".$cp; ?>
                 </div>
-                <span class="greenBox">
-                    ->
-                </span>
             </div>
         </div>

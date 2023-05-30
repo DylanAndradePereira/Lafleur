@@ -38,7 +38,7 @@ include 'header.php'?>
                         echo 'value="'.$recherche.'"';
                     }
                 ?>
-                style="width:100%;height:auto;padding-left:20px;font-size:2vh">
+                style="width:100%;height:auto;padding-left:20px;font-size:2em">
             <button type="submit"></button>
         </form>
         <!-- Boucle des articles -->
