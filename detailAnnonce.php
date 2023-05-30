@@ -20,7 +20,7 @@ include 'header.php'?>
                         <div class="whiteBox">
                             <?php echo utf8_encode($datasProduit['Designation']) ?>
                         </div>
-                        <span class="greenBox">
+                        <span class="greenBox" style="margin-left:0px">
                             <?php echo $datasProduit['prix']."€" ?>
                         </span>
                     </div>
