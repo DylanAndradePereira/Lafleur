@@ -21,7 +21,7 @@ include 'header.php'?>
             
             <div class="hidden-phone">
                 <form action="shop.php">
-                    <input type="text" name="recherche" placeholder="Déja une idée ?">
+                    <input type="text" name="recherche" placeholder="Déja une idée ?" style="font-size:1.3em;font-weight:bold">
                     <button class="buttonSubmitArrow" type="submit">
                         <img class="arrowButton" src="icons/arrow.png" alt="flèche">
                     </button>
