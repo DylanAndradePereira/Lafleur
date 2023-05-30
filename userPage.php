@@ -2,52 +2,55 @@
 .whiteBox{
     font-size:2em;
     width:30%;
+    text-align:left;
+    padding-left:1em;
+    margin-top:1em;
 }
 </style>
 
 <?php
-    $email = $_SESSION['email'];
-    $nom = $_SESSION['nom'];
-    $prenom = $_SESSION['prenom'];
-    $adresse = $_SESSION['adresse'];
-    $ville = $_SESSION['ville'];
-    $cp = $_SESSION['codePostale'];
+    $email = utf8_encode($_SESSION['email']);
+    $nom = utf8_encode($_SESSION['nom']);
+    $prenom = utf8_encode($_SESSION['prenom']);
+    $adresse = utf8_encode($_SESSION['adresse']);
+    $ville = utf8_encode($_SESSION['ville']);
+    $cp = utf8_encode($_SESSION['codePostale']);
 ?>
 
         <div id="containerProfilProfil">
             <div class="row">
                 <div class="whiteBox">
-                    <?php echo "Email : ".$email; ?>
+                    <?php echo "<b>Email :</b> ".$email; ?>
                 </div>
             </div>
 
             <div class="row">
                 <div class="whiteBox">
-                    <?php echo "Nom : ".$nom; ?>
+                    <?php echo "<b>Nom :</b> ".$nom; ?>
                 </div>
             </div>
 
             <div class="row">
                 <div class="whiteBox">
-                    <?php echo "Prenom : ".$prenom; ?>
+                    <?php echo "<b>Prenom :</b> ".$prenom; ?>
                 </div>
             </div>
 
             <div class="row">
                 <div class="whiteBox">
-                    <?php echo "Adresse : ".$adresse; ?>                
+                    <?php echo "<b>Adresse :</b> ".$adresse; ?>                
                 </div>
             </div>
 
             <div class="row">
                 <div class="whiteBox">
-                    <?php echo "Ville : ".$ville; ?>                
+                    <?php echo "<b>Ville :</b> ".$ville; ?>                
                 </div>
             </div>
 
             <div class="row">
                 <div class="whiteBox">
-                    <?php echo "Code Postal : ".$cp; ?>
+                    <?php echo "<b>Code Postal :</b> ".$cp; ?>
                 </div>
             </div>
         </div>
