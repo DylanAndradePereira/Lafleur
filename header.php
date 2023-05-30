@@ -32,7 +32,7 @@ if (isset($_SESSION['admin']) && ($_SESSION['admin'])){
     <ul id="navbar">
     
         <!-- Accueil -->
-        <a href="#">
+        <a href="./index.php">
             <li>
                 <img src="./icons/rmbg_logoLaFleur.png">
             </li>
